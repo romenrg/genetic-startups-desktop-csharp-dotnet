@@ -1,5 +1,5 @@
 # Genetic Startups
-> An application, based on Genetic Algorithms, representing possible lives of startups. The algorithm improves startup paths over generations, to achieve the most successful outcome possible in the given map.
+> C# .NET implementation (with Windows Froms) of a Desktop application, based on Genetic Algorithms, representing possible lives of startups. The algorithm improves startup paths over generations, to achieve the most successful outcome possible in the given map.
 
 ## Introduction: Genetic Algorithms
 
