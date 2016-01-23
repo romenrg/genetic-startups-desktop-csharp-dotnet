@@ -36,6 +36,8 @@ There will be implementations of this application using 3 different combinations
 - *NodeJS + REST API + ReactJS*
 - *Java / Spring + REST API + AngularJS*
 
+In the [parent repository of Genetic Startups](https://github.com/romenrg/genetic-startups) you will find further information about these different implementations.
+
 ### Copyright and License
 
 Copyright 2015 Romen Rodríguez-Gil
