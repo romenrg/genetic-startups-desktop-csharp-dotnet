@@ -20,12 +20,12 @@ namespace GeneticStartupsWindows
         private int cellHeight = 45;
         private int cellPadding = 5;
         private UIAritmetics uiAritmetics;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMap;
         private System.Windows.Forms.PictureBox[,] tableCells;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.Button buttonGenerateMap;
+        private System.Windows.Forms.Button buttonStartEvolution;
+        private System.Windows.Forms.MenuStrip menuStripMainMenu;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mapSizeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
@@ -55,63 +55,63 @@ namespace GeneticStartupsWindows
             //Icon
             this.Icon = GeneticStartupsWindows.Properties.Resources.entrepreneur_starting_ico;
             // Creating elements
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.tableLayoutPanelMap = new System.Windows.Forms.TableLayoutPanel();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.buttonGenerateMap = new System.Windows.Forms.Button();
+            this.buttonStartEvolution = new System.Windows.Forms.Button();
+            this.menuStripMainMenu = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mapSizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.algorithmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.squaresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.licenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.tableLayoutPanelMap.SuspendLayout();
+            this.menuStripMainMenu.SuspendLayout();
             this.SuspendLayout();
-            // label1
-            this.label1.Name = "label1";
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Size = new System.Drawing.Size(200, 23);
-            this.label1.AutoSize = true;
-            this.label1.TabIndex = 4;
-            this.label1.Text = "......... Welcome to Genetic Startups world .........";
-            // button1
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Generate Map";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // button2
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Start Evolution";
-            this.button2.Enabled = false;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            this.button2.Enabled = false;
+            // labelTitle
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Size = new System.Drawing.Size(200, 23);
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.TabIndex = 4;
+            this.labelTitle.Text = "......... Welcome to Genetic Startups world .........";
+            // buttonGenerateMap
+            this.buttonGenerateMap.Name = "buttonGenerateMap";
+            this.buttonGenerateMap.Size = new System.Drawing.Size(92, 23);
+            this.buttonGenerateMap.TabIndex = 1;
+            this.buttonGenerateMap.Text = "Generate Map";
+            this.buttonGenerateMap.UseVisualStyleBackColor = true;
+            this.buttonGenerateMap.Click += new System.EventHandler(this.button1_Click);
+            // buttonStartEvolution
+            this.buttonStartEvolution.Name = "buttonStartEvolution";
+            this.buttonStartEvolution.Size = new System.Drawing.Size(90, 23);
+            this.buttonStartEvolution.TabIndex = 2;
+            this.buttonStartEvolution.Text = "Start Evolution";
+            this.buttonStartEvolution.Enabled = false;
+            this.buttonStartEvolution.UseVisualStyleBackColor = true;
+            this.buttonStartEvolution.Click += new System.EventHandler(this.button2_Click);
+            this.buttonStartEvolution.Enabled = false;
             // Form1
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.buttonStartEvolution);
+            this.Controls.Add(this.buttonGenerateMap);
+            this.Controls.Add(this.labelTitle);
+            this.Controls.Add(this.tableLayoutPanelMap);
+            this.Controls.Add(this.menuStripMainMenu);
+            this.MainMenuStrip = this.menuStripMainMenu;
             this.Name = "Form1";
-            this.Text = "Genetic Startups, by @romenrg";
+            this.Text = "Genetic Startups, by @romenrg88";
             this.Load += new System.EventHandler(this.Form1_Load);
-            // menuStrip1
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            // menuStripMainMenu
+            this.menuStripMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
                                                 this.infoToolStripMenuItem,
                                                 this.settingsToolStripMenuItem
                                           });
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(473, 24);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "Menu";
+            this.menuStripMainMenu.Location = new System.Drawing.Point(0, 0);
+            this.menuStripMainMenu.Name = "menuStripMainMenu";
+            this.menuStripMainMenu.Size = new System.Drawing.Size(473, 24);
+            this.menuStripMainMenu.TabIndex = 3;
+            this.menuStripMainMenu.Text = "Menu";
             // infoToolStripMenuItem
             this.infoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
                 this.algorithmToolStripMenuItem,
@@ -151,40 +151,40 @@ namespace GeneticStartupsWindows
 
         public void createDynamicTable()
         {
-            this.tableLayoutPanel1.Controls.Clear();
-            this.tableLayoutPanel1.RowStyles.Clear();
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
-            this.tableLayoutPanel1.ColumnCount = this.numCols;
-            this.tableLayoutPanel1.RowCount = this.numRows;
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanelMap.Controls.Clear();
+            this.tableLayoutPanelMap.RowStyles.Clear();
+            this.tableLayoutPanelMap.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
+            this.tableLayoutPanelMap.ColumnCount = this.numCols;
+            this.tableLayoutPanelMap.RowCount = this.numRows;
+            this.tableLayoutPanelMap.Name = "tableLayoutPanelMap";
             this.tableCells = new System.Windows.Forms.PictureBox[this.numCols, this.numRows];
             for (int i=0; i<this.numCols; i++)
             {
-                this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, this.cellHeight));
+                this.tableLayoutPanelMap.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, this.cellHeight));
                 for (int j=0; j<this.numRows; j++) {
-                    this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, this.cellWidth));
+                    this.tableLayoutPanelMap.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, this.cellWidth));
                     this.tableCells[i, j] = new System.Windows.Forms.PictureBox();
-                    this.tableLayoutPanel1.Controls.Add(this.tableCells[i, j], i, j);
+                    this.tableLayoutPanelMap.Controls.Add(this.tableCells[i, j], i, j);
                 }
             }
             int tableWidth = (this.numCols * (this.cellWidth + 2)) + 2;
             int tableHeight = (this.numRows * (this.cellHeight + 2)) + 2;
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(tableWidth, tableHeight);
+            this.tableLayoutPanelMap.Size = new System.Drawing.Size(tableWidth, tableHeight);
         }
 
         public void setLayout()
         {
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = this.uiAritmetics.calculateClientSize(this.tableLayoutPanel1.Size, this.menuStrip1.Size, this.cellHeight, this.cellWidth, this.button1.Size, this.button2.Size);
-            this.tableLayoutPanel1.Location = this.uiAritmetics.calculateTableLocationCenteredInContainer(this.tableLayoutPanel1.Size, this.ClientSize);
-            this.label1.Location = new System.Drawing.Point(this.ClientSize.Width / 2 - this.label1.Size.Width / 2, this.menuStrip1.Size.Height + this.cellHeight * 2 / 5);
-            this.button1.Location = new System.Drawing.Point(this.ClientSize.Width / 5, this.tableLayoutPanel1.Size.Height + this.menuStrip1.Size.Height + this.cellHeight * 5 / 3);
-            this.button2.Location = new System.Drawing.Point(this.ClientSize.Width / 5 * 4 - this.button2.Size.Width, this.tableLayoutPanel1.Size.Height + this.menuStrip1.Size.Height + this.cellHeight * 5 / 3);
+            this.ClientSize = this.uiAritmetics.calculateClientSize(this.tableLayoutPanelMap.Size, this.menuStripMainMenu.Size, this.cellHeight, this.cellWidth, this.buttonGenerateMap.Size, this.buttonStartEvolution.Size);
+            this.tableLayoutPanelMap.Location = this.uiAritmetics.calculateTableLocationCenteredInContainer(this.tableLayoutPanelMap.Size, this.ClientSize);
+            this.labelTitle.Location = new System.Drawing.Point(this.ClientSize.Width / 2 - this.labelTitle.Size.Width / 2, this.menuStripMainMenu.Size.Height + this.cellHeight * 2 / 5);
+            this.buttonGenerateMap.Location = new System.Drawing.Point(this.ClientSize.Width / 5, this.tableLayoutPanelMap.Size.Height + this.menuStripMainMenu.Size.Height + this.cellHeight * 5 / 3);
+            this.buttonStartEvolution.Location = new System.Drawing.Point(this.ClientSize.Width / 5 * 4 - this.buttonStartEvolution.Size.Width, this.tableLayoutPanelMap.Size.Height + this.menuStripMainMenu.Size.Height + this.cellHeight * 5 / 3);
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.tableLayoutPanelMap.ResumeLayout(false);
+            this.menuStripMainMenu.ResumeLayout(false);
+            this.menuStripMainMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
@@ -196,16 +196,16 @@ namespace GeneticStartupsWindows
             Cursor.Current = Cursors.WaitCursor;
             this.genetics = new Genetics(this.numCols, this.numRows, this.numSteps);
             this.genetics.createBoard();
-            for (int i = 0; i < this.tableLayoutPanel1.ColumnCount; i++)
+            for (int i = 0; i < this.tableLayoutPanelMap.ColumnCount; i++)
             {
-                for (int j = 0; j < this.tableLayoutPanel1.RowCount; j++)
+                for (int j = 0; j < this.tableLayoutPanelMap.RowCount; j++)
                 {
                     this.tableCells[i, j].Image = this.genetics.getIconForPos(i, j);
                     this.tableCells[i, j].SizeMode = PictureBoxSizeMode.StretchImage;
                 }
             }
             Cursor.Current = Cursors.Default;
-            this.button2.Enabled = true;
+            this.buttonStartEvolution.Enabled = true;
         }
 
 
@@ -269,14 +269,14 @@ namespace GeneticStartupsWindows
         private void button1_Click(object sender, EventArgs e)
         {
             this.generateMap();
-            this.button2.Enabled = true;
+            this.buttonStartEvolution.Enabled = true;
         }
 
         private async void button2_Click(object sender, EventArgs e)
         {
             this.genetics.generatePopulation(25);
             this.genetics.generateScores();
-            this.label1.Text = "Generation: 1" + " / " + Genetics.NUM_GENERATIONS + ". Best score (displayed): " + genetics.individualsSortedByScore[0].Value;
+            this.labelTitle.Text = "Generation: 1" + " / " + Genetics.NUM_GENERATIONS + ". Best score (displayed): " + genetics.individualsSortedByScore[0].Value;
             for (int i = 1; i < Genetics.NUM_GENERATIONS; i++)
             {
                 await this.showBestCandidateOfGeneration();
@@ -284,7 +284,7 @@ namespace GeneticStartupsWindows
                 await Task.Delay(750);
                 this.genetics.newGeneration();
                 this.genetics.generateScores();
-                this.label1.Text = "Generation: " + (i + 1) + " / " + Genetics.NUM_GENERATIONS + ". Best score (displayed): " + genetics.individualsSortedByScore[0].Value;
+                this.labelTitle.Text = "Generation: " + (i + 1) + " / " + Genetics.NUM_GENERATIONS + ". Best score (displayed): " + genetics.individualsSortedByScore[0].Value;
             }
             await this.showBestCandidateOfGeneration();
         }
