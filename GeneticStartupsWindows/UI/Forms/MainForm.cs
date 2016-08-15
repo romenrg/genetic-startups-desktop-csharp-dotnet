@@ -82,7 +82,7 @@ namespace GeneticStartupsWindows
             this.buttonGenerateMap.TabIndex = 1;
             this.buttonGenerateMap.Text = "Generate Map";
             this.buttonGenerateMap.UseVisualStyleBackColor = true;
-            this.buttonGenerateMap.Click += new System.EventHandler(this.button1_Click);
+            this.buttonGenerateMap.Click += new System.EventHandler(this.buttonGenerateMap_Click);
             // buttonStartEvolution
             this.buttonStartEvolution.Name = "buttonStartEvolution";
             this.buttonStartEvolution.Size = new System.Drawing.Size(90, 23);
@@ -90,7 +90,7 @@ namespace GeneticStartupsWindows
             this.buttonStartEvolution.Text = "Start Evolution";
             this.buttonStartEvolution.Enabled = false;
             this.buttonStartEvolution.UseVisualStyleBackColor = true;
-            this.buttonStartEvolution.Click += new System.EventHandler(this.button2_Click);
+            this.buttonStartEvolution.Click += new System.EventHandler(this.buttonStartEvolution_Click);
             this.buttonStartEvolution.Enabled = false;
             // Form1
             this.Controls.Add(this.buttonStartEvolution);
@@ -266,13 +266,13 @@ namespace GeneticStartupsWindows
         //  Event Listeners
         // -----------------------------
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonGenerateMap_Click(object sender, EventArgs e)
         {
             this.generateMap();
             this.buttonStartEvolution.Enabled = true;
         }
 
-        private async void button2_Click(object sender, EventArgs e)
+        private async void buttonStartEvolution_Click(object sender, EventArgs e)
         {
             this.genetics.generatePopulation(25);
             this.genetics.generateScores();
