@@ -15,13 +15,15 @@ namespace GeneticStartupsWindows.Algorithm
         public int numCols;
         public int numRows;
         private Random generateRandomNum;
+        private Genetics.ScoreFunctions scoreFunction;
 
-        public MapHelpers(int numCols, int numRows) {
+        public MapHelpers(int numCols, int numRows, Genetics.ScoreFunctions scoreFunction) {
             this.numCols = numCols;
             this.numRows = numRows;
             this.generateRandomNum = new Random();
             this.generatePercentagesOfActionsPerQ();
             this.generateScorePossibilitiesPerAction();
+            this.scoreFunction = scoreFunction;
         }
 
         public void createBoard()
@@ -67,11 +69,23 @@ namespace GeneticStartupsWindows.Algorithm
             {
                 Genetics.Actions squareAction = this.matrix[x, y];
                 int squareValue = 0;
-                for (int i = 0; i < this.possibleScoresPerAction[squareAction].Count; i++)
+                int numScoresPerSelectedAction = this.possibleScoresPerAction[squareAction].Count;
+                for (int i = 0; i < numScoresPerSelectedAction; i++)
                 {
                     squareValue += this.possibleScoresPerAction[squareAction][i].Key;
                 }
-                return squareValue;
+                switch (this.scoreFunction)
+                {
+                    case Genetics.ScoreFunctions.Sum:
+                        return squareValue;
+                        break;
+                    case Genetics.ScoreFunctions.Average:
+                        return squareValue / numScoresPerSelectedAction;
+                        break;
+                    default:
+                        return squareValue;
+                        break;
+                }
             }
             else
             {

@@ -19,6 +19,7 @@ namespace GeneticStartupsWindows
         private int cellWidth = 45;
         private int cellHeight = 45;
         private int cellPadding = 5;
+        private Genetics.ScoreFunctions scoreFunction = Genetics.ScoreFunctions.Sum;
         private UIAritmetics uiAritmetics;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMap;
         private System.Windows.Forms.PictureBox[,] tableCells;
@@ -28,6 +29,7 @@ namespace GeneticStartupsWindows
         private System.Windows.Forms.MenuStrip menuStripMainMenu;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mapSizeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem scoreFunctionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem algorithmToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem squaresToolStripMenuItem;
@@ -62,6 +64,7 @@ namespace GeneticStartupsWindows
             this.menuStripMainMenu = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mapSizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.scoreFunctionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.algorithmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.squaresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -138,7 +141,9 @@ namespace GeneticStartupsWindows
             this.licenseToolStripMenuItem.Click += new System.EventHandler(this.licenseToolStripMenuItem_Click);
             // settingsToolStripMenuItem
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mapSizeToolStripMenuItem});
+                this.mapSizeToolStripMenuItem,
+                this.scoreFunctionToolStripMenuItem
+            });
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
@@ -147,6 +152,11 @@ namespace GeneticStartupsWindows
             this.mapSizeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.mapSizeToolStripMenuItem.Text = "Map Size";
             this.mapSizeToolStripMenuItem.Click += new System.EventHandler(this.mapSizeToolStripMenuItem_Click);
+            // scoreFunctionToolStripMenuItem
+            this.scoreFunctionToolStripMenuItem.Name = "scoreFunctionToolStripMenuItem";
+            this.scoreFunctionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.scoreFunctionToolStripMenuItem.Text = "Score Function";
+            this.scoreFunctionToolStripMenuItem.Click += new System.EventHandler(this.scoreFunctionToolStripMenuItem_Click);
         }
 
         public void createDynamicTable()
@@ -194,7 +204,7 @@ namespace GeneticStartupsWindows
             // In future maybe set the number of columns and rows like
             // http://stackoverflow.com/questions/15623461/adding-pictureboxes-to-tablelayoutpanel-is-very-slow
             Cursor.Current = Cursors.WaitCursor;
-            this.genetics = new Genetics(this.numCols, this.numRows, this.numSteps);
+            this.genetics = new Genetics(this.numCols, this.numRows, this.numSteps, this.scoreFunction);
             this.genetics.createBoard();
             for (int i = 0; i < this.tableLayoutPanelMap.ColumnCount; i++)
             {
@@ -301,6 +311,18 @@ namespace GeneticStartupsWindows
                 this.numSteps = this.numCols + this.numRows;
                 this.createDynamicTable();
                 this.setLayout();
+                Cursor.Current = Cursors.Default;
+            }
+        }
+
+        private void scoreFunctionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ScoreSelectionForm scoreSelectionForm = new ScoreSelectionForm();
+            var result = scoreSelectionForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                this.scoreFunction = scoreSelectionForm.scoreFunction;
                 Cursor.Current = Cursors.Default;
             }
         }

@@ -65,6 +65,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithm\MapHelpers.cs" />
+    <Compile Include="UI\Forms\ScoreSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Forms\ScoreSelectionForm.Designer.cs">
+      <DependentUpon>ScoreSelectionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Forms\TypesOfSquaresForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="UI\Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forms\ScoreSelectionForm.resx">
+      <DependentUpon>ScoreSelectionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Forms\TypesOfSquaresForm.resx">
       <DependentUpon>TypesOfSquaresForm.cs</DependentUpon>

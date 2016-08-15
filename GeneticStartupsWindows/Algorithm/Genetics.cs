@@ -12,6 +12,7 @@ namespace GeneticStartupsWindows
     {
         public enum Actions { None=0, Advisor=1, Circus=2, Team=3, Product=4, Feedback=5, Investor=6, Doubts=7, Sales=8, BadNews=9}
         public enum States { Confusion=0, Success=1, Failure=2}
+        public enum ScoreFunctions { Sum = 0, Average = 1, Min = 2, Max = 3 }
 
         private Random generateRandomNum;
         private int numSteps;
@@ -33,11 +34,11 @@ namespace GeneticStartupsWindows
         //  Public methods
         // -----------------------------
 
-        public Genetics(int numCols, int numRows, int numSteps)
+        public Genetics(int numCols, int numRows, int numSteps, ScoreFunctions scoreFunction)
         {
             this.numSteps = numSteps;
             this.generateRandomNum = new Random();
-            this.mapHelpers = new MapHelpers(numCols, numRows);
+            this.mapHelpers = new MapHelpers(numCols, numRows, scoreFunction);
         }
 
         public void generatePopulation(int populationSize)
