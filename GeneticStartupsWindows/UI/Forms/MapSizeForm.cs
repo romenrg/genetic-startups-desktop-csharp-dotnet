@@ -34,8 +34,8 @@ namespace GeneticStartupsWindows
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.numCols = int.Parse(textBox1.Text);
-            this.numRows = int.Parse(textBox2.Text);
+            this.numCols = int.Parse(textBoxNumCols.Text);
+            this.numRows = int.Parse(textBoxNumRows.Text);
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
